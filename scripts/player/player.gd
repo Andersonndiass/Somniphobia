@@ -7,7 +7,7 @@ extends CharacterBody3D
 @export var jump_velocity = 7
 @export var jump_force = 5
 
-@onready var pause = $"../CanvasLayer"
+
 # Referências de nó
 @onready var camera_pivot = $head
 @onready var camera = $head/Camera3D
@@ -36,8 +36,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _process(delta):
-	handle_mouse_mode()
-
+	pass
 func update_state():
 	var input_vector = Input.get_vector("esq", "dir", "cima", "baixo")
 	var is_moving = input_vector.length() > 0
@@ -115,13 +114,3 @@ func handle_mouse_movement(event):
 	rotation_x = clamp(rotation_x, MIN_X_ROTATION, MAX_X_ROTATION)
 	rotation_degrees.y = rotation_y
 	camera_pivot.rotation_degrees.x = rotation_x
-
-func handle_mouse_mode():
-	if Input.is_action_just_pressed("ui_cancel"):
-		pause.visible = true
-		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		else:
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-			pause.visible = false
-			

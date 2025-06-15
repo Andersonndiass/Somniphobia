@@ -19,7 +19,6 @@ metadata/_edit_horizontal_guides_ = [431.0]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_4ytvr")
-autoplay = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -43,9 +42,9 @@ texture_hover = ExtResource("3_mhnvy")
 [node name="play" type="Button" parent="."]
 clip_contents = true
 layout_mode = 2
-offset_left = 522.0
+offset_left = -100.0
 offset_top = 325.0
-offset_right = 626.0
+offset_right = 4.0
 offset_bottom = 380.0
 pivot_offset = Vector2(51.94, 26.585)
 size_flags_horizontal = 4
@@ -60,9 +59,9 @@ flat = true
 [node name="config" type="Button" parent="."]
 clip_contents = true
 layout_mode = 2
-offset_left = 494.0
+offset_left = -100.0
 offset_top = 398.0
-offset_right = 653.0
+offset_right = 59.0
 offset_bottom = 453.0
 pivot_offset = Vector2(79.03, 26.74)
 size_flags_horizontal = 4
@@ -77,9 +76,9 @@ flat = true
 [node name="exit" type="Button" parent="."]
 clip_contents = true
 layout_mode = 2
-offset_left = 522.0
+offset_left = -100.0
 offset_top = 476.0
-offset_right = 618.0
+offset_right = -4.0
 offset_bottom = 531.0
 pivot_offset = Vector2(46.675, 24.01)
 size_flags_horizontal = 4
