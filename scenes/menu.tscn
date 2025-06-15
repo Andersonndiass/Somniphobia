@@ -1,15 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://jx2u22hkc6mj"]
+[gd_scene load_steps=6 format=3 uid="uid://jx2u22hkc6mj"]
 
 [ext_resource type="Script" uid="uid://c6yyou2cdu4ap" path="res://scripts/menu.gd" id="1_con2f"]
 [ext_resource type="Texture2D" uid="uid://cqxo481j7rf07" path="res://assets/titulo.png" id="2_con2f"]
-[ext_resource type="Texture2D" uid="uid://bnjh3j2kdtqbx" path="res://ui/fundo_menu/1.png" id="3_70i5f"]
 [ext_resource type="Texture2D" uid="uid://cbd4c3jd8ta50" path="res://assets/tituloH.png" id="3_mhnvy"]
 [ext_resource type="FontFile" uid="uid://buv8pue5j2q3t" path="res://assets/fonts/HelpMe.ttf" id="4_4ytvr"]
-[ext_resource type="Texture2D" uid="uid://ds16gqadfkax8" path="res://ui/fundo_menu/2.png" id="4_mj5lg"]
 [ext_resource type="AudioStream" uid="uid://q6qdvqxw6ict" path="res://assets/sounds/menu/music_menu.wav" id="5_4ytvr"]
-[ext_resource type="Texture2D" uid="uid://d0diawqxelcpv" path="res://ui/fundo_menu/3.png" id="5_ufwb2"]
-[ext_resource type="Texture2D" uid="uid://bcj1lbksaoadx" path="res://ui/fundo_menu/4.png" id="6_6cdou"]
-[ext_resource type="Texture2D" uid="uid://bu4b2iqv8l0dx" path="res://ui/fundo_menu/5.png" id="7_i42df"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -19,29 +14,42 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_con2f")
+metadata/_edit_vertical_guides_ = [570.0]
+metadata/_edit_horizontal_guides_ = [431.0]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_4ytvr")
 autoplay = true
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="Titulo" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 333.0
-offset_top = 43.79
+offset_top = 26.0
 offset_right = 816.0
-offset_bottom = 282.79
+offset_bottom = 265.0
 pivot_offset = Vector2(241.225, 119.455)
 texture_normal = ExtResource("2_con2f")
 texture_hover = ExtResource("3_mhnvy")
 
 [node name="play" type="Button" parent="."]
 clip_contents = true
-layout_mode = 0
-offset_left = 500.0
-offset_top = 369.0
-offset_right = 604.0
-offset_bottom = 424.0
+layout_mode = 2
+offset_left = 522.0
+offset_top = 325.0
+offset_right = 626.0
+offset_bottom = 380.0
 pivot_offset = Vector2(51.94, 26.585)
+size_flags_horizontal = 4
+size_flags_vertical = 4
 focus_mode = 0
 theme_override_colors/font_hover_color = Color(0.400332, 0.0104109, 0.0104274, 1)
 theme_override_fonts/font = ExtResource("4_4ytvr")
@@ -49,29 +57,16 @@ theme_override_font_sizes/font_size = 40
 text = "Play"
 flat = true
 
-[node name="exit" type="Button" parent="."]
-clip_contents = true
-layout_mode = 0
-offset_left = 500.0
-offset_top = 497.0
-offset_right = 596.0
-offset_bottom = 552.0
-pivot_offset = Vector2(46.675, 24.01)
-focus_mode = 0
-theme_override_colors/font_hover_color = Color(0.400332, 0.0104109, 0.0104274, 1)
-theme_override_fonts/font = ExtResource("4_4ytvr")
-theme_override_font_sizes/font_size = 40
-text = "Exit"
-flat = true
-
 [node name="config" type="Button" parent="."]
 clip_contents = true
-layout_mode = 0
-offset_left = 500.0
-offset_top = 437.0
-offset_right = 659.0
-offset_bottom = 492.0
+layout_mode = 2
+offset_left = 494.0
+offset_top = 398.0
+offset_right = 653.0
+offset_bottom = 453.0
 pivot_offset = Vector2(79.03, 26.74)
+size_flags_horizontal = 4
+size_flags_vertical = 4
 focus_mode = 0
 theme_override_colors/font_hover_color = Color(0.400332, 0.0104109, 0.0104274, 1)
 theme_override_fonts/font = ExtResource("4_4ytvr")
@@ -79,53 +74,30 @@ theme_override_font_sizes/font_size = 40
 text = "Config"
 flat = true
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(577, 325)
-scale = Vector2(2.00007, 2.00007)
-motion_scale = Vector2(3.265, 3.265)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-texture = ExtResource("3_70i5f")
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(577, 325)
-scale = Vector2(2.00007, 2.00007)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-texture = ExtResource("4_mj5lg")
-
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(577, 325)
-scale = Vector2(2.00007, 2.00007)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-texture = ExtResource("5_ufwb2")
-
-[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(577, 325)
-scale = Vector2(2.00007, 2.00007)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
-texture = ExtResource("6_6cdou")
-
-[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(577, 325)
-scale = Vector2(2.00007, 2.00007)
-motion_scale = Vector2(10.655, 10.655)
-motion_mirroring = Vector2(4.295, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
-texture = ExtResource("7_i42df")
+[node name="exit" type="Button" parent="."]
+clip_contents = true
+layout_mode = 2
+offset_left = 522.0
+offset_top = 476.0
+offset_right = 618.0
+offset_bottom = 531.0
+pivot_offset = Vector2(46.675, 24.01)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0.400332, 0.0104109, 0.0104274, 1)
+theme_override_fonts/font = ExtResource("4_4ytvr")
+theme_override_font_sizes/font_size = 40
+text = "Exit"
+flat = true
 
 [connection signal="mouse_entered" from="Titulo" to="." method="_on_titulo_mouse_entered"]
 [connection signal="mouse_exited" from="Titulo" to="." method="_on_titulo_mouse_exited"]
 [connection signal="mouse_entered" from="play" to="." method="_on_play_mouse_entered"]
 [connection signal="mouse_exited" from="play" to="." method="_on_play_mouse_exited"]
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="config" to="." method="_on_config_mouse_entered"]
+[connection signal="mouse_exited" from="config" to="." method="_on_config_mouse_exited"]
 [connection signal="mouse_entered" from="exit" to="." method="_on_exit_mouse_entered"]
 [connection signal="mouse_exited" from="exit" to="." method="_on_exit_mouse_exited"]
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
-[connection signal="mouse_entered" from="config" to="." method="_on_config_mouse_entered"]
-[connection signal="mouse_exited" from="config" to="." method="_on_config_mouse_exited"]

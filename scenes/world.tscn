@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhd6r0cwo2u2k"]
+[gd_scene load_steps=7 format=3 uid="uid://dhd6r0cwo2u2k"]
 
 [ext_resource type="PackedScene" uid="uid://cj7yx37gvliyi" path="res://scenes/player.tscn" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://clge4sqa5bjdw" path="res://scenes/pause.tscn" id="2_rwgxs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rwgxs"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -33,3 +34,9 @@ use_collision = true
 size = Vector3(32, 0.001, 21)
 
 [node name="Player" parent="." instance=ExtResource("1_nnsk1")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("2_rwgxs")]
+visible = true
