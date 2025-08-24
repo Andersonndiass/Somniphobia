@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=3 uid="uid://cw6eq0xw7cqal"]
+
+[ext_resource type="Script" uid="uid://codef853vhwxe" path="res://scripts/ui/jumpscare.gd" id="1_dkw4f"]
+[ext_resource type="Texture2D" uid="uid://c2vgk2f8ejff2" path="res://assets/png/hqdefault.jpg" id="2_6rciv"]
+[ext_resource type="Shader" uid="uid://dyseo0v3pi3og" path="res://scripts/control/jumpscare.gdshader" id="3_4qc3y"]
+[ext_resource type="AudioStream" uid="uid://dakajrx7uu7f8" path="res://assets/sounds/grito.mp3" id="3_6rciv"]
+[ext_resource type="FontFile" uid="uid://buv8pue5j2q3t" path="res://assets/fonts/HelpMe.ttf" id="4_578iv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_578iv"]
+shader = ExtResource("3_4qc3y")
+shader_parameter/pixel_size = 123.032
+
+[node name="JumpscareScreen" type="CanvasLayer"]
+script = ExtResource("1_dkw4f")
+
+[node name="ScareImage" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -230.0
+offset_right = 244.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6rciv")
+
+[node name="ColorRect" type="ColorRect" parent="ScareImage"]
+process_mode = 3
+modulate = Color(0.705792, 0, 0.0148156, 1)
+self_modulate = Color(0.58, 0.251333, 0.1856, 0.662745)
+material = SubResource("ShaderMaterial_578iv")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.81, 0.27, 0, 0.392157)
+
+[node name="ColorRect2" type="ColorRect" parent="ScareImage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.43, 0.043, 0.043, 0.603922)
+
+[node name="GameOverMenu" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = -20.0
+offset_right = 29.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="GameOverMenu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_578iv")
+text = "sifudeu"
+horizontal_alignment = 1
+
+[node name="TryAgainButton" type="Button" parent="GameOverMenu"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("4_578iv")
+text = "tentar dinovo"
+flat = true
+
+[node name="QuitButton" type="Button" parent="GameOverMenu"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("4_578iv")
+text = "desisto"
+flat = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6rciv")
+
+[connection signal="pressed" from="GameOverMenu/TryAgainButton" to="." method="_on_try_again_button_pressed"]
+[connection signal="pressed" from="GameOverMenu/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg7j8jldbgtwc"]
+
+[ext_resource type="Texture2D" uid="uid://p0knfmude5bp" path="res://assets/png/book-1.png" id="1_8ongn"]
+[ext_resource type="Script" uid="uid://b2ub6gdqropsr" path="res://scripts/ui/question_ui.gd" id="1_r5gaf"]
+
+[node name="QuestionUI" type="TextureRect"]
+modulate = Color(0.176419, 0.176419, 0.176419, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -338.0
+offset_top = -349.0
+offset_right = 401.0
+offset_bottom = 385.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_8ongn")
+expand_mode = 2
+stretch_mode = 5
+script = ExtResource("1_r5gaf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(300, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -307.5
+offset_top = -272.0
+offset_right = -7.5
+offset_bottom = 228.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="QuestionLabel" type="Label" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="AnswersContainer" type="VBoxContainer" parent="VBoxContainer/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+alignment = 1

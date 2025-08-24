@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://dlgmu6iiicg45"]
+
+[ext_resource type="Script" uid="uid://s5yyendxqmq" path="res://scripts/entity/enemy.gd" id="1_tt7e2"]
+[ext_resource type="Texture2D" uid="uid://cxqhehfn0v2jx" path="res://assets/png/olho.webp" id="2_s7bn3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s7bn3"]
+albedo_texture = ExtResource("2_s7bn3")
+emission_enabled = true
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_qp131"]
+material = SubResource("StandardMaterial3D_s7bn3")
+size = Vector2(5, 5)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tt7e2"]
+radius = 0.283633
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_s7bn3"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_s7bn3"]
+radius = 15.0
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_tt7e2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00318, 0, 0, 0, 1.00318, 0, 0, 0, 1.00318, 0, 0, 0)
+mesh = SubResource("QuadMesh_qp131")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.47433, 0)
+shape = SubResource("CapsuleShape3D_tt7e2")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -2.425, 0)
+light_color = Color(0.298039, 0.0431373, 0.0431373, 1)
+light_energy = 16.0
+light_size = 0.202
+spot_range = 18.236
+spot_angle = 89.99
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 3.3
+target_desired_distance = 3.3
+path_postprocessing = 1
+
+[node name="Hitbox" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+shape = SubResource("CapsuleShape3D_s7bn3")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0.5)
+shape = SubResource("SphereShape3D_s7bn3")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

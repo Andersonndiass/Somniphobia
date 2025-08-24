@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgj8yp5bvmrl6"]
+
+[ext_resource type="Script" uid="uid://ck1whl40l1sps" path="res://scripts/entity/interagiveis.gd" id="1_7ha66"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7ha66"]
+radius = 14.6551
+
+[node name="Interagiveis" type="RigidBody3D" groups=["interagivel"]]
+script = ExtResource("1_7ha66")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_7ha66")

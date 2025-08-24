@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://dyxrbs4x4wuj1"]
+
+[ext_resource type="Texture2D" uid="uid://b5ydj2ony4n0i" path="res://assets/png/pirula.png" id="1_7sde7"]
+[ext_resource type="Script" uid="uid://bynp2owswsqsc" path="res://scripts/ui/ItemData.gd" id="2_8b76o"]
+[ext_resource type="PackedScene" uid="uid://ddv8v1p4mvr8d" path="res://scenes/pilula.tscn" id="2_m6ewl"]
+
+[resource]
+script = ExtResource("2_8b76o")
+item_name = "pilula"
+icon = ExtResource("1_7sde7")
+mesh_scene = ExtResource("2_m6ewl")
+is_flashlight = false
+is_victory_item = true
+is_usable = true
+is_stackable = false
+max_stack_size = 1
+metadata/_custom_type_script = "uid://bynp2owswsqsc"

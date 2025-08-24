@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://d0w2vp0rmkfnf"]
+
+[ext_resource type="Script" uid="uid://grciofki4i4i" path="res://scripts/ui/inventory.gd" id="1_ty45s"]
+[ext_resource type="Script" uid="uid://07cks5hx5kep" path="res://scripts/ui/hotbar.gd" id="2_53g1v"]
+[ext_resource type="PackedScene" uid="uid://bjanma7dg142u" path="res://scenes/inventory_slot.tscn" id="3_yyk2a"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_ty45s"]
+device = -1
+keycode = 49
+unicode = 49
+
+[sub_resource type="Shortcut" id="Shortcut_53g1v"]
+events = [SubResource("InputEventKey_ty45s")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_53g1v"]
+device = -1
+keycode = 50
+unicode = 50
+
+[sub_resource type="Shortcut" id="Shortcut_yyk2a"]
+events = [SubResource("InputEventKey_53g1v")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_uae8j"]
+device = -1
+keycode = 51
+unicode = 51
+
+[sub_resource type="Shortcut" id="Shortcut_s887n"]
+events = [SubResource("InputEventKey_uae8j")]
+
+[node name="Inventory" type="Node"]
+script = ExtResource("1_ty45s")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="UI"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -64.0
+offset_right = 100.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_right = 10
+
+[node name="Hotbar" type="HBoxContainer" parent="UI/MarginContainer"]
+layout_mode = 2
+script = ExtResource("2_53g1v")
+
+[node name="Slot" parent="UI/MarginContainer/Hotbar" instance=ExtResource("3_yyk2a")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+shortcut = SubResource("Shortcut_53g1v")
+
+[node name="Slot2" parent="UI/MarginContainer/Hotbar" instance=ExtResource("3_yyk2a")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+shortcut = SubResource("Shortcut_yyk2a")
+
+[node name="Slot3" parent="UI/MarginContainer/Hotbar" instance=ExtResource("3_yyk2a")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+shortcut = SubResource("Shortcut_s887n")

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwks0gm5qu4hg"]
+
+[ext_resource type="Script" uid="uid://b7dicqw8g0a8c" path="res://scripts/entity/lanterna.gd" id="1_t0wgk"]
+[ext_resource type="Texture2D" uid="uid://derkhika5c4lm" path="res://assets/3d/lanterna/FlashlightTexture.png" id="2_wtegx"]
+[ext_resource type="ArrayMesh" uid="uid://dwqily18a68ov" path="res://assets/3d/lanterna/Flashlight.obj" id="3_xxyy1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vrh0j"]
+albedo_texture = ExtResource("2_wtegx")
+
+[node name="lanterna" type="Node3D"]
+script = ExtResource("1_t0wgk")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.116371, 0.00171557, -0.0292384, 0, -0.119794, -0.00702896, -0.0292886, 0.00681638, -0.116171, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_vrh0j")
+mesh = ExtResource("3_xxyy1")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.969757, 0.00460044, 0.244028, -1.73045e-09, 0.999822, -0.0188487, -0.244071, 0.0182787, 0.969585, 0, 0, 0)
+visible = false
+light_color = Color(1, 1, 0.211765, 1)
+light_energy = 5.0
+light_volumetric_fog_energy = 4.24
+spot_range = 32.5877
+spot_attenuation = 0.94
+spot_angle = 29.3469
+spot_angle_attenuation = 4.2871

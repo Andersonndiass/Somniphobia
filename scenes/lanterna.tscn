@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://deln2u4fjig1l"]
+
+[ext_resource type="Script" uid="uid://b7dicqw8g0a8c" path="res://scripts/entity/lanterna.gd" id="1_w1yce"]
+[ext_resource type="Texture2D" uid="uid://derkhika5c4lm" path="res://assets/3d/lanterna/FlashlightTexture.png" id="2_2biwu"]
+[ext_resource type="ArrayMesh" uid="uid://dwqily18a68ov" path="res://assets/3d/lanterna/Flashlight.obj" id="3_2lsem"]
+[ext_resource type="Script" uid="uid://col1yqb4hkpv7" path="res://scripts/texto.gd" id="4_2biwu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7s1lo"]
+albedo_texture = ExtResource("2_2biwu")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qmlga"]
+radius = 2.76121
+
+[node name="lanterna" type="Node3D"]
+script = ExtResource("1_w1yce")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.116371, 0.00171557, -0.0292384, 0, -0.119794, -0.00702896, -0.0292886, 0.00681638, -0.116171, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_7s1lo")
+mesh = ExtResource("3_2lsem")
+
+[node name="lanterna" type="SpotLight3D" parent="."]
+transform = Transform3D(0.969757, 0.00460044, 0.244028, -1.73045e-09, 0.999822, -0.0188487, -0.244071, 0.0182787, 0.969585, 0, 0, 0)
+light_color = Color(1, 1, 0.211765, 1)
+light_energy = 0.0
+light_volumetric_fog_energy = 4.24
+spot_range = 32.5877
+spot_attenuation = 0.94
+spot_angle = 29.3469
+spot_angle_attenuation = 4.2871
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_qmlga")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.686169, 0)
+billboard = 1
+fixed_size = true
+text = "[E]"
+autowrap_mode = 2
+script = ExtResource("4_2biwu")

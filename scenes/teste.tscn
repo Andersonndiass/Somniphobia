@@ -1,0 +1,60 @@
+[gd_scene load_steps=11 format=3 uid="uid://bmmvvloi3uuly"]
+
+[ext_resource type="PackedScene" uid="uid://fub108eaabde" path="res://scenes/scenelittle.tscn" id="1_7w86a"]
+[ext_resource type="PackedScene" uid="uid://cj7yx37gvliyi" path="res://scenes/player.tscn" id="2_s2wow"]
+[ext_resource type="PackedScene" uid="uid://cvggitysdsmu1" path="res://assets/3d/book/source/ksziaka/ksziaka.gltf" id="3_s2wow"]
+[ext_resource type="PackedScene" uid="uid://bro0ibxn16jli" path="res://assets/3d/chicken-low-poly/source/Chicken.fbx" id="4_3iyrq"]
+[ext_resource type="PackedScene" uid="uid://deln2u4fjig1l" path="res://scenes/lanterna.tscn" id="5_4iivt"]
+[ext_resource type="PackedScene" uid="uid://dwft7xcndo2a3" path="res://scenes/portal.tscn" id="6_cgmdw"]
+[ext_resource type="AudioStream" uid="uid://t8hg4f1hxvpt" path="res://musga.mp3" id="7_grbdc"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7w86a"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_cgmdw"]
+sky_material = SubResource("ProceduralSkyMaterial_7w86a")
+
+[sub_resource type="Environment" id="Environment_3iyrq"]
+background_mode = 2
+sky = SubResource("Sky_cgmdw")
+ambient_light_source = 3
+ambient_light_sky_contribution = 0.01
+ambient_light_energy = 1.91
+tonemap_mode = 3
+tonemap_exposure = 1.55
+tonemap_white = 16.0
+ssr_fade_in = 12.6673
+glow_intensity = 8.0
+glow_bloom = 0.21
+glow_hdr_luminance_cap = 1.0
+adjustment_enabled = true
+adjustment_brightness = 0.5
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_3iyrq")
+
+[node name="scenelittle" parent="." instance=ExtResource("1_7w86a")]
+transform = Transform3D(1.885, 0, 0, 0, 1.885, 0, 0, 0, 1.885, 0.331461, -0.0864315, 0.308849)
+
+[node name="Player" parent="." instance=ExtResource("2_s2wow")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.590451, 1.79857, 4.23463)
+
+[node name="ksziaka" parent="." instance=ExtResource("3_s2wow")]
+transform = Transform3D(0.225, 0, 0, 0, 0.225, 0, 0, 0, 0.225, 1.34618, 1.93006, 0.979094)
+
+[node name="Chicken" parent="." instance=ExtResource("4_3iyrq")]
+transform = Transform3D(0.325, 0, 0, 0, 0.325, 0, 0, 0, 0.325, 2.1639, -0.045471, 3.18422)
+
+[node name="lanterna" parent="." instance=ExtResource("5_4iivt")]
+transform = Transform3D(0.564593, 0, -0.82537, 0, 1, 0, 0.82537, 0, 0.564593, 4.27195, 0.419294, -2.52497)
+
+[node name="Area3D" parent="." instance=ExtResource("6_cgmdw")]
+transform = Transform3D(1.325, 0, 0, 0, 1.325, 0, 0, 0, 1.325, 0, 14.0457, 18.4703)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_grbdc")
+volume_db = -26.644
+autoplay = true

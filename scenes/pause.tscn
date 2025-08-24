@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2me4j84r5nhm"]
+
+[ext_resource type="Shader" uid="uid://dl5y1v1nytkre" path="res://scenes/pause.gdshader" id="1_f1d2v"]
+[ext_resource type="Script" uid="uid://csa0u2opkknyd" path="res://scripts/pause.gd" id="1_r8yp4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r8yp4"]
+shader = ExtResource("1_f1d2v")
+shader_parameter/lod = 3.0
+
+[node name="CanvasLayer" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_r8yp4")
+
+[node name="bg_blur" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_r8yp4")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+color = Color(0.0687983, 0.0687983, 0.0687983, 1)
+
+[node name="ColorRect" type="ColorRect" parent="bg_blur"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.263455
+anchor_top = 0.387346
+anchor_right = 0.736545
+anchor_bottom = 0.751
+color = Color(0.140447, 0.140447, 0.140447, 0.619608)
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
+
+[node name="Button" type="Button" parent="bg_blur/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = -15.5
+offset_right = 58.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Resume"
+
+[connection signal="pressed" from="bg_blur/ColorRect/Button" to="." method="_on_button_pressed"]

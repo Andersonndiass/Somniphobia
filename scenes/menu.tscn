@@ -1,0 +1,236 @@
+<<<<<<< HEAD
+[gd_scene load_steps=9 format=3 uid="uid://jx2u22hkc6mj"]
+
+[ext_resource type="Script" uid="uid://c6yyou2cdu4ap" path="res://scripts/control/menu.gd" id="1_con2f"]
+[ext_resource type="Texture2D" uid="uid://cqxo481j7rf07" path="res://assets/png/titulo.png" id="2_con2f"]
+[ext_resource type="Texture2D" uid="uid://wlpfcm77fmkl" path="res://assets/png/1.png" id="2_mj5lg"]
+[ext_resource type="Texture2D" uid="uid://cbd4c3jd8ta50" path="res://assets/png/tituloH.png" id="3_mhnvy"]
+[ext_resource type="FontFile" uid="uid://buv8pue5j2q3t" path="res://assets/fonts/HelpMe.ttf" id="4_4ytvr"]
+[ext_resource type="AudioStream" uid="uid://q6qdvqxw6ict" path="res://assets/sounds/menu/music_menu.wav" id="5_4ytvr"]
+[ext_resource type="Shader" uid="uid://p43jphasyyg7" path="res://scripts/control/menu.gdshader" id="12_ufwb2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6cdou"]
+shader = ExtResource("12_ufwb2")
+shader_parameter/pixel_size = 169.202
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_con2f")
+metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_6cdou")
+=======
+[gd_scene load_steps=6 format=3 uid="uid://jx2u22hkc6mj"]
+
+[ext_resource type="Script" uid="uid://c6yyou2cdu4ap" path="res://scripts/menu.gd" id="1_con2f"]
+[ext_resource type="Texture2D" uid="uid://cqxo481j7rf07" path="res://assets/titulo.png" id="2_con2f"]
+[ext_resource type="Texture2D" uid="uid://cbd4c3jd8ta50" path="res://assets/tituloH.png" id="3_mhnvy"]
+[ext_resource type="FontFile" uid="uid://buv8pue5j2q3t" path="res://assets/fonts/HelpMe.ttf" id="4_4ytvr"]
+[ext_resource type="AudioStream" uid="uid://q6qdvqxw6ict" path="res://assets/sounds/menu/music_menu.wav" id="5_4ytvr"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+>>>>>>> 74b14751a69565a81a3bfd770c9cd936a7608304
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+<<<<<<< HEAD
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -600.0
+offset_top = -337.5
+offset_right = 600.0
+offset_bottom = 337.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_mj5lg")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect"]
+layout_mode = 0
+offset_right = 123.0
+offset_bottom = 687.0
+color = Color(0.00392157, 0.0117647, 0.0117647, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="TextureRect/ColorRect"]
+layout_mode = 0
+offset_left = 1104.0
+offset_top = -17.0
+offset_right = 1223.0
+offset_bottom = 696.0
+color = Color(0.00392157, 0.0117647, 0.0117647, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_4ytvr")
+autoplay = true
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Titulo" type="TextureButton" parent="CanvasLayer2"]
+self_modulate = Color(1, 1, 1, 0.717647)
+offset_left = 52.0
+offset_top = 36.0
+offset_right = 535.0
+offset_bottom = 275.0
+=======
+script = ExtResource("1_con2f")
+metadata/_edit_vertical_guides_ = [570.0]
+metadata/_edit_horizontal_guides_ = [431.0]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_4ytvr")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Titulo" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 333.0
+offset_top = 26.0
+offset_right = 816.0
+offset_bottom = 265.0
+>>>>>>> 74b14751a69565a81a3bfd770c9cd936a7608304
+pivot_offset = Vector2(241.225, 119.455)
+texture_normal = ExtResource("2_con2f")
+texture_hover = ExtResource("3_mhnvy")
+
+<<<<<<< HEAD
+[node name="play" type="Button" parent="CanvasLayer2"]
+self_modulate = Color(1, 1, 1, 0.717647)
+clip_contents = true
+offset_left = 136.0
+offset_top = 356.0
+offset_right = 240.0
+offset_bottom = 411.0
+pivot_offset = Vector2(51.94, 26.585)
+=======
+[node name="play" type="Button" parent="."]
+clip_contents = true
+layout_mode = 2
+offset_left = -100.0
+offset_top = 325.0
+offset_right = 4.0
+offset_bottom = 380.0
+pivot_offset = Vector2(51.94, 26.585)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+>>>>>>> 74b14751a69565a81a3bfd770c9cd936a7608304
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0.400332, 0.0104109, 0.0104274, 1)
+theme_override_fonts/font = ExtResource("4_4ytvr")
+theme_override_font_sizes/font_size = 40
+text = "Play"
+flat = true
+
+<<<<<<< HEAD
+[node name="exit" type="Button" parent="CanvasLayer2"]
+self_modulate = Color(1, 1, 1, 0.717647)
+clip_contents = true
+offset_left = 136.0
+offset_top = 484.0
+offset_right = 232.0
+offset_bottom = 539.0
+pivot_offset = Vector2(46.675, 24.01)
+=======
+[node name="config" type="Button" parent="."]
+clip_contents = true
+layout_mode = 2
+offset_left = -100.0
+offset_top = 398.0
+offset_right = 59.0
+offset_bottom = 453.0
+pivot_offset = Vector2(79.03, 26.74)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0.400332, 0.0104109, 0.0104274, 1)
+theme_override_fonts/font = ExtResource("4_4ytvr")
+theme_override_font_sizes/font_size = 40
+text = "Config"
+flat = true
+
+[node name="exit" type="Button" parent="."]
+clip_contents = true
+layout_mode = 2
+offset_left = -100.0
+offset_top = 476.0
+offset_right = -4.0
+offset_bottom = 531.0
+pivot_offset = Vector2(46.675, 24.01)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+>>>>>>> 74b14751a69565a81a3bfd770c9cd936a7608304
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0.400332, 0.0104109, 0.0104274, 1)
+theme_override_fonts/font = ExtResource("4_4ytvr")
+theme_override_font_sizes/font_size = 40
+text = "Exit"
+flat = true
+
+<<<<<<< HEAD
+[node name="config" type="Button" parent="CanvasLayer2"]
+self_modulate = Color(1, 1, 1, 0.717647)
+clip_contents = true
+offset_left = 136.0
+offset_top = 424.0
+offset_right = 295.0
+offset_bottom = 479.0
+pivot_offset = Vector2(79.03, 26.74)
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0.400332, 0.0104109, 0.0104274, 1)
+theme_override_fonts/font = ExtResource("4_4ytvr")
+theme_override_font_sizes/font_size = 40
+text = "Extra"
+flat = true
+alignment = 0
+
+[connection signal="mouse_entered" from="CanvasLayer2/Titulo" to="." method="_on_titulo_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/Titulo" to="." method="_on_titulo_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer2/play" to="." method="_on_play_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/play" to="." method="_on_play_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/exit" to="." method="_on_exit_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/exit" to="." method="_on_exit_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/exit" to="." method="_on_exit_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/config" to="." method="_on_config_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/config" to="." method="_on_config_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/config" to="." method="_on_config_pressed"]
+=======
+[connection signal="mouse_entered" from="Titulo" to="." method="_on_titulo_mouse_entered"]
+[connection signal="mouse_exited" from="Titulo" to="." method="_on_titulo_mouse_exited"]
+[connection signal="mouse_entered" from="play" to="." method="_on_play_mouse_entered"]
+[connection signal="mouse_exited" from="play" to="." method="_on_play_mouse_exited"]
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="config" to="." method="_on_config_mouse_entered"]
+[connection signal="mouse_exited" from="config" to="." method="_on_config_mouse_exited"]
+[connection signal="mouse_entered" from="exit" to="." method="_on_exit_mouse_entered"]
+[connection signal="mouse_exited" from="exit" to="." method="_on_exit_mouse_exited"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
+>>>>>>> 74b14751a69565a81a3bfd770c9cd936a7608304

@@ -1,0 +1,123 @@
+[gd_scene load_steps=7 format=3 uid="uid://cgxfl0qu70viw"]
+
+[ext_resource type="Script" uid="uid://dx7bfqi3owde4" path="res://scripts/control/lore_2.gd" id="1_6yamy"]
+[ext_resource type="Shader" uid="uid://p43jphasyyg7" path="res://scripts/control/menu.gdshader" id="1_jovy7"]
+[ext_resource type="Texture2D" uid="uid://wlpfcm77fmkl" path="res://assets/png/1.png" id="2_6yamy"]
+[ext_resource type="FontFile" uid="uid://buv8pue5j2q3t" path="res://assets/fonts/HelpMe.ttf" id="3_3wnya"]
+[ext_resource type="AudioStream" uid="uid://q6qdvqxw6ict" path="res://assets/sounds/menu/music_menu.wav" id="4_cx1wa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xhytr"]
+shader = ExtResource("1_jovy7")
+shader_parameter/pixel_size = 169.202
+
+[node name="lore2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6yamy")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_xhytr")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -600.0
+offset_top = -337.5
+offset_right = 600.0
+offset_bottom = 337.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6yamy")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect"]
+layout_mode = 0
+offset_right = 123.0
+offset_bottom = 687.0
+color = Color(0.00392157, 0.0117647, 0.0117647, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="TextureRect/ColorRect"]
+layout_mode = 0
+offset_left = 1104.0
+offset_top = -17.0
+offset_right = 1223.0
+offset_bottom = 696.0
+color = Color(0.00392157, 0.0117647, 0.0117647, 1)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="TextureRect"]
+
+[node name="Creditos" type="Label" parent="TextureRect/CanvasLayer2"]
+self_modulate = Color(1, 1, 1, 0.717647)
+clip_contents = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -255.0
+offset_top = -292.0
+offset_right = 256.0
+offset_bottom = -177.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(106.09, 26.585)
+theme_override_fonts/font = ExtResource("3_3wnya")
+theme_override_font_sizes/font_size = 100
+text = "Lore"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="TextureRect/CanvasLayer2"]
+clip_contents = true
+offset_right = 84.0
+offset_bottom = 77.0
+theme_override_font_sizes/font_size = 62
+text = "<"
+flat = true
+
+[node name="Creditos2" type="Label" parent="TextureRect/CanvasLayer2"]
+self_modulate = Color(1, 1, 1, 0.717647)
+clip_contents = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -390.0
+offset_top = -113.0
+offset_right = 409.0
+offset_bottom = 224.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(415.5, 159.5)
+theme_override_fonts/font = ExtResource("3_3wnya")
+theme_override_font_sizes/font_size = 20
+text = "No entanto, não há apenas perguntas esperando por ele. No escuro dos corredores, uma entidade sombria persegue o protagonista. Ninguém sabe se é fruto de sua mente cansada, de algo que despertou ao brincar com forças que não deveria, ou apenas o reflexo da pressão esmagadora da vida escolar.
+
+Entre salas abandonadas, labirintos sem fim e a constante necessidade de manter sua lanterna acesa, o aluno deve lutar contra o medo, responder às questões e encontrar a saída.
+
+Será apenas um sonho… ou uma verdade sombria que sempre esteve ali, escondida sob a rotina escolar?"
+autowrap_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_cx1wa")
+autoplay = true
+
+[connection signal="pressed" from="TextureRect/CanvasLayer2/Button" to="." method="_on_button_pressed"]

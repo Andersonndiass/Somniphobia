@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://d3lgw62hsswqy"]
+
+[ext_resource type="Texture2D" uid="uid://co81xo5c0khy8" path="res://assets/png/pilha.png" id="1_pao04"]
+[ext_resource type="PackedScene" uid="uid://c4gvf2wt316m1" path="res://assets/pilha/Pilha.tscn" id="2_pao04"]
+[ext_resource type="Script" uid="uid://bynp2owswsqsc" path="res://scripts/ui/ItemData.gd" id="4_oy8y2"]
+
+[resource]
+script = ExtResource("4_oy8y2")
+item_name = "pilha"
+icon = ExtResource("1_pao04")
+mesh_scene = ExtResource("2_pao04")
+is_flashlight = false
+is_victory_item = false
+is_usable = true
+is_stackable = true
+max_stack_size = 5
+metadata/_custom_type_script = "uid://bynp2owswsqsc"

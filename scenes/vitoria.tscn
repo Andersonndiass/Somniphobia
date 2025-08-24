@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://d3u55hdhboed2"]
+
+[ext_resource type="VideoStream" uid="uid://c7bpkd7ef5n0w" path="res://assets/sounds/menu/eaipai.ogv" id="1_5w2qk"]
+[ext_resource type="Script" uid="uid://b3rwda2ytuqls" path="res://scripts/control/vitoria.gd" id="1_7a54b"]
+[ext_resource type="Shader" uid="uid://p43jphasyyg7" path="res://scripts/control/menu.gdshader" id="2_3oowa"]
+[ext_resource type="FontFile" uid="uid://buv8pue5j2q3t" path="res://assets/fonts/HelpMe.ttf" id="4_nnk0s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7a54b"]
+shader = ExtResource("2_3oowa")
+shader_parameter/pixel_size = 51.46
+
+[node name="vitoria" type="CanvasLayer"]
+script = ExtResource("1_7a54b")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer"]
+process_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_5w2qk")
+autoplay = true
+expand = true
+loop = true
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_7a54b")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+modulate = Color(0.53, 0.0636, 0.0636, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_nnk0s")
+theme_override_font_sizes/font_size = 72
+text = "PARABÉNS, VOCÊ GANHOU!!"

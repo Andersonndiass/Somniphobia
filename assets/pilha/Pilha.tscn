@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4gvf2wt316m1"]
+
+[ext_resource type="PackedScene" uid="uid://bdomyqeyu2a4e" path="res://assets/pilha/scene.gltf" id="1_cp3oc"]
+[ext_resource type="Script" uid="uid://c7msydhay7ljf" path="res://scripts/entity/pilha.gd" id="2_gj54s"]
+[ext_resource type="Texture2D" uid="uid://c6sjujjw5c7vs" path="res://assets/png/Material.001_baseColor.png" id="2_i771k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gj54s"]
+albedo_texture = ExtResource("2_i771k")
+
+[node name="Pilha" groups=["interagivel"] instance=ExtResource("1_cp3oc")]
+script = ExtResource("2_gj54s")
+
+[node name="Sketchfab_model" parent="." index="0"]
+transform = Transform3D(0.318, 0, 0, 0, -1.39002e-08, 0.233, 0, -0.318, -1.01848e-08, 0, 0, 0)
+
+[node name="Cylinder_Material_001_0" parent="Sketchfab_model/AA battery_fbx/RootNode/Cylinder" index="0"]
+material_override = SubResource("StandardMaterial3D_gj54s")

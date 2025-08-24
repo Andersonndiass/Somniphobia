@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://brj5in8p87ib6"]
+
+[ext_resource type="Texture2D" uid="uid://tfwtygq2toxt" path="res://assets/png/lanterna_0002.png" id="1_qkiqp"]
+[ext_resource type="PackedScene" uid="uid://dwks0gm5qu4hg" path="res://scenes/lanterna2.tscn" id="2_qkiqp"]
+[ext_resource type="Script" uid="uid://bynp2owswsqsc" path="res://scripts/ui/ItemData.gd" id="3_4ofll"]
+
+[resource]
+script = ExtResource("3_4ofll")
+item_name = "Lanterna"
+icon = ExtResource("1_qkiqp")
+mesh_scene = ExtResource("2_qkiqp")
+is_flashlight = true
+is_victory_item = false
+is_usable = false
+is_stackable = false
+max_stack_size = 1
+metadata/_custom_type_script = "uid://bynp2owswsqsc"

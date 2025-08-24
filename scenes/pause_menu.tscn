@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://dd1i778y4rqwr"]
+
+[ext_resource type="Script" uid="uid://6uval6oxqyp8" path="res://scripts/control/pause_menu.gd" id="1_hdmo1"]
+[ext_resource type="FontFile" uid="uid://buv8pue5j2q3t" path="res://assets/fonts/HelpMe.ttf" id="2_nwcfo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwcfo"]
+bg_color = Color(0.6, 0, 0, 1)
+
+[node name="PauseMenu" type="ColorRect"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.147672, 0.147672, 0.147672, 0.592157)
+script = ExtResource("1_hdmo1")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 149.0
+offset_right = 642.0
+offset_bottom = 168.0
+theme_override_fonts/font = ExtResource("2_nwcfo")
+text = "Jogo Pausado"
+
+[node name="ResumeButton" type="Button" parent="."]
+clip_contents = true
+layout_mode = 2
+offset_left = 510.0
+offset_top = 241.0
+offset_right = 642.0
+offset_bottom = 268.0
+pivot_offset = Vector2(62.34, 11.335)
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.77, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.589116, 0.0469164, 0.0471309, 1)
+theme_override_fonts/font = ExtResource("2_nwcfo")
+text = "Retomar"
+flat = true
+
+[node name="QuitButton" type="Button" parent="."]
+clip_contents = true
+layout_mode = 2
+offset_left = 510.0
+offset_top = 318.0
+offset_right = 642.0
+offset_bottom = 345.0
+pivot_offset = Vector2(62.34, 11.335)
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_nwcfo")
+theme_override_styles/focus = SubResource("StyleBoxFlat_nwcfo")
+text = "Sair do jogo"
+flat = true
+
+[connection signal="mouse_entered" from="ResumeButton" to="." method="_on_resume_button_mouse_entered"]
+[connection signal="mouse_exited" from="ResumeButton" to="." method="_on_resume_button_mouse_exited"]
+[connection signal="pressed" from="ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="mouse_entered" from="QuitButton" to="." method="_on_quit_button_mouse_entered"]
+[connection signal="mouse_exited" from="QuitButton" to="." method="_on_quit_button_mouse_exited"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
