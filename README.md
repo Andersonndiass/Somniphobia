@@ -59,7 +59,7 @@ Entre salas abandonadas, labirintos sem fim e a constante necessidade de manter 
 ---
 
 ## 📥 Instalação
-1. Baixe o arquivo `.zip` da versão mais recente [aqui](https://drive.google.com/drive/folders/1InfiGIMHPmzTPzB7T8kQqYwBv89Sx-YL?usp=drive_link).
+1. Baixe o arquivo `.zip` da versão mais recente <a href="https://drive.google.com/drive/folders/1InfiGIMHPmzTPzB7T8kQqYwBv89Sx-YL?usp=drive_link" target="_blank">aqui</a>.
 2. Extraia o conteúdo.
 3. Execute o arquivo **`Somniphobia.exe`**.
 
